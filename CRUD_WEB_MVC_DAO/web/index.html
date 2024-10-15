@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #cc9900;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        form {
+                background-color: #663300;
+                padding: 5px;
+                border-radius: 8px;
+                justify-content: space-between;
+                max-width: 800px;
+                margin: 0 auto;
+                text-align: center;
+            }
+                        
+            h1 {
+                text-align: center;
+                font-size: 24px;
+                color: #f0f0f0;
+                margin: 10px 0;
+            }
+
+            .form-grid {
+                display: flex;
+                background-color: #663300;
+                border-radius: 8px;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+                max-width: 800px;
+                padding: 20px;
+                justify-content: space-between;
+                margin: 0;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .form-grid div {
+                flex: 1;
+            }
+        
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+            input[type="text"],
+            input[type="number"],
+            input[type="date"],
+            select {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 20px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                font-size: 16px;
+            }
+
+        button {
+            background-color: #996600;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            width: 50px;
+            display: block;
+            margin: 0 auto 10px;
+        }
+        .action-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .action-buttons button {
+            margin: 5px;
+        }
+        
+    select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 16px;
+        background-color: #fff;
+        color: #663300;
+    }
+
+    select:focus {
+        border-color: #cc9900; /* Cor quando o select estiver focado */
+        outline: none;
+    }
+    input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #fff;
+    color: #333;
+    }
+
+    input[type="number"]:focus {
+        border-color: #996600; /* Cor da borda quando o campo está focado */
+        outline: none; /* Remove a borda azul padrão */
+        
+    }
+    </style>
+    <title>Cafeteria</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <img src="cafeteria.png" alt="Logo da Cafeteria">
+            <h1>iCoffee - HEALTHY CAFE</h1>
+        </div>
+
+        <div class="form-grid">
+        <div>
+        <form action="ManterProduto" method="GET">
+            
+            <label>ID:</label>
+            <input type="text" name="txtid" placeholder="Somente para consulta"><br><br>
+            
+            <label>Descrição:</label>
+            <input type="text" name="txtdescricao" placeholder="Descrição do produto"><br><br>
+            
+            <label>Preço:</label>            
+            <input type="text" name="txtpreco" placeholder="Preço do produto"><br><br>
+            
+            <label for="txtcategoria">Categoria:</label>
+            <select name="categoria" id="categoria">
+                <option value="Bebidas geladas">Bebidas geladas</option>
+                <option value="Bebidas quentes">Bebidas quentes</option>
+                <option value="Comidas frias">Comidas frias</option>
+                <option value="Comidas quentes">Comidas quentes</option>
+            </select><BR><BR>
+
+            <label for="txttamanho">Tamanho:</label>
+            <select name="tamanho" id="tamanho">
+                <option value="Unico">Único</option>
+                <option value="Pequeno">Pequeno</option>
+                <option value="Medio">Médio</option>
+                <option value="Grande">Grande</option>
+            </select><BR><BR>
+
+            </div>
+            <div>
+            <label>Data de Validade:</label>
+            <input type="date" name="txtdataDeValidade"><BR><BR>
+            
+            <label>Ingredientes:</label>
+            <input type="text" name="txtingredientes" placeholder="Digite os ingredientes"><BR><BR>
+
+            <label>Valor Energético (kcal):</label>
+            <input type="number" name="txtcalorias" placeholder="Em kcal"><BR><BR>
+            
+            <label>Tempo de Preparo:</label>
+            <input type="number" name="txttempopreparo" placeholder="Em minutos"><BR><BR>
+            
+            <label for="txtfuncionalidade">Funcionalidade:</label>
+            <select name="funcionalidade" id="funcionalidade">
+                <option value="Proteico">Proteico</option>
+                <option value="Diurético">Diurético</option>
+                <option value="Digestivo">Digestivo</option>
+                <option value="Antioxidantes">Antioxidantes</option>
+                <option value="Energizantes">Energizantes</option>
+                <option value="Relaxante">Relaxante</option>
+            </select><BR><BR>
+            </div>
+        </div>
+
+            <div class="action-buttons">
+                <button type="submit" name="btnop" value="CADASTRAR">Novo Produto</button>
+                <button type="submit" name="btnop" value="DELETAR">Excluir Produto</button>
+                <button type="submit" name="btnop" value="EDITAR">Editar Produto</button>
+                <button type="submit" name="btnop" value="CONSULTARBYID">Busca por Código</button>
+                <button type="submit" name="btnop" value="CONSULTAR_TODOS">Todos os Produtos</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
